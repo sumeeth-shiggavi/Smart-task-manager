@@ -13,42 +13,90 @@
 
     <div class="container">
 
-        <h1>Smart Task Manager</h1>
+        <div id="authSection">
 
-        <form id="taskForm">
+            <h1>Smart Task Manager</h1>
 
-            <input type="text" id="title" placeholder="Task Title" required>
+            <input type="text"
+                   id="username"
+                   placeholder="Username">
 
-            <input type="text" id="description" placeholder="Description" required>
+            <input type="password"
+                   id="password"
+                   placeholder="Password">
 
-            <select id="priority">
+            <button onclick="registerUser()">
+                Register
+            </button>
 
-                <option value="High">High</option>
+            <button onclick="loginUser()">
+                Login
+            </button>
 
-                <option value="Medium">Medium</option>
+        </div>
 
-                <option value="Low">Low</option>
+        <div id="dashboardSection"
+             style="display:none;">
 
-            </select>
+            <h1>Task Dashboard</h1>
 
-            <select id="status">
+            <button class="logout-btn"
+                    onclick="logoutUser()">
 
-                <option value="Pending">Pending</option>
+                Logout
 
-                <option value="Completed">Completed</option>
+            </button>
 
-            </select>
+            <form id="taskForm">
 
-            <button type="submit">Add Task</button>
+                <input type="text"
+                       id="title"
+                       placeholder="Task Title"
+                       required>
 
-        </form>
+                <input type="text"
+                       id="description"
+                       placeholder="Description"
+                       required>
 
-        <h2>Tasks</h2>
+                <select id="priority">
 
-        <div id="taskList"></div>
+                    <option value="High">High</option>
+
+                    <option value="Medium">Medium</option>
+
+                    <option value="Low">Low</option>
+
+                </select>
+
+                <select id="status">
+
+                    <option value="Pending">Pending</option>
+
+                    <option value="Completed">Completed</option>
+
+                </select>
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </form>
+
+            <h2>Analytics Summary</h2>
+
+            <div id="analyticsBox"></div>
+
+            <h2>Tasks</h2>
+
+            <div id="taskList"></div>
+
+        </div>
 
     </div>
+
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
     <script src="/static/script.js"></script>
 
 </body>
