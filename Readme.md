@@ -245,4 +245,5 @@ The analytics API returns:
 
 # 👨‍💻 Author
 
-Developed as part of Python Development Internship Assignment.
+Sumeet Shiggavi
+
