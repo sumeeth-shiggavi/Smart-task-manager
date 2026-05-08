@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Task Manager</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Smart Task Manager</h1>
+
+        <form id="taskForm">
+
+            <input type="text" id="title" placeholder="Task Title" required>
+
+            <input type="text" id="description" placeholder="Description" required>
+
+            <select id="priority">
+
+                <option value="High">High</option>
+
+                <option value="Medium">Medium</option>
+
+                <option value="Low">Low</option>
+
+            </select>
+
+            <select id="status">
+
+                <option value="Pending">Pending</option>
+
+                <option value="Completed">Completed</option>
+
+            </select>
+
+            <button type="submit">Add Task</button>
+
+        </form>
+
+        <h2>Tasks</h2>
+
+        <div id="taskList"></div>
+
+    </div>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
