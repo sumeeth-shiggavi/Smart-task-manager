@@ -157,6 +157,12 @@ document
 
     document.getElementById('taskForm').reset();
 
+    document.querySelector('#taskForm button')
+        .innerText = 'Add Task';
+
+    document.getElementById('formHeading')
+        .innerText = 'Task Dashboard';
+
     loadTasks();
 
     loadAnalytics();
@@ -184,13 +190,13 @@ async function loadTasks() {
 
                 <p><b>Status:</b> ${task.status}</p>
 
-                <button onclick="editTask(
+                <button onclick='editTask(
                     ${task.id},
-                    '${task.title}',
-                    '${task.description}',
-                    '${task.priority}',
-                    '${task.status}'
-                )">
+                    ${JSON.stringify(task.title)},
+                    ${JSON.stringify(task.description)},
+                    ${JSON.stringify(task.priority)},
+                    ${JSON.stringify(task.status)}
+                )'>
 
                     Edit
 
@@ -251,6 +257,17 @@ function editTask(id, title, description, priority, status) {
     document.getElementById('priority').value = priority;
 
     document.getElementById('status').value = status;
+
+    document.querySelector('#taskForm button')
+        .innerText = 'Update Task';
+
+    document.getElementById('formHeading')
+        .innerText = 'Edit Task Status';
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 async function deleteTask(id) {
